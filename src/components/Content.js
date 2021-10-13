@@ -1,7 +1,7 @@
 import React from 'react';
 import Stories from './Stories';
-import Content from './components/Content';
-import Post from './components/Post';
+import Content from './Content';
+import Post from './Post';
 export default function Content() {
   return (
     <div>
