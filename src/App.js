@@ -3,15 +3,30 @@ import './style.css';
 import Header from './components/Header';
 import Content from './components/Content';
 import Footer from './components/Footer';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { Home } from './pages/index';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Home, Chat, Explore, Notification, Profile } from './pages/index';
 export default function App() {
   return (
     <div>
       <Router>
         <Header />
         <Switch>
-          <Route path="/*" exact>
+          <Route path="/">
+            <Home />
+          </Route>
+          <Route path="/chat">
+            <Chat />
+          </Route>
+          <Route path="/explore">
+            <Explore />
+          </Route>
+          <Route path="/notification">
+            <Notification />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+          <Route path="/*">
             <Home />
           </Route>
         </Switch>
