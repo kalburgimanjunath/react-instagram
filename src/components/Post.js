@@ -8,24 +8,24 @@ export default class Post extends React.Component {
       error: null,
       isLoaded: false,
       items: [
-        {
-          firstname: 'manjunath',
-          lastname: 'kalburgi',
-          location: 'Ravi nagar',
-          city: 'hubli',
-          country: 'india',
-          post_image_url: 'https://via.placeholder.com/300/09f/fff.png',
-          post_video_url: '',
-        },
-        {
-          firstname: 'Suman',
-          lastname: 'Habib',
-          location: 'Ravi nagar',
-          city: 'hubli',
-          country: 'india',
-          post_image_url: 'https://via.placeholder.com/300/09f/fff.png',
-          post_video_url: '',
-        },
+        // {
+        //   firstname: 'manjunath',
+        //   lastname: 'kalburgi',
+        //   location: 'Ravi nagar',
+        //   city: 'hubli',
+        //   country: 'india',
+        //   post_image_url: 'https://via.placeholder.com/300/09f/fff.png',
+        //   post_video_url: '',
+        // },
+        // {
+        //   firstname: 'Suman',
+        //   lastname: 'Habib',
+        //   location: 'Ravi nagar',
+        //   city: 'hubli',
+        //   country: 'india',
+        //   post_image_url: 'https://via.placeholder.com/300/09f/fff.png',
+        //   post_video_url: '',
+        // },
       ],
     };
   }
@@ -36,7 +36,7 @@ export default class Post extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items,
+            items: result,
           });
         },
         // Note: it's important to handle errors here
@@ -71,9 +71,9 @@ export default class Post extends React.Component {
     },
   ];
 
-  
   render() {
     const { error, isLoaded, items } = this.state;
+    console.log(items);
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
