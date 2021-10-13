@@ -11,9 +11,6 @@ export default function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/">
-            <Home />
-          </Route>
           <Route path="/chat">
             <Chat />
           </Route>
@@ -30,7 +27,6 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
-        <Content />
         <Footer />
       </Router>
     </div>

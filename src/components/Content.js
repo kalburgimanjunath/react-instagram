@@ -1,6 +1,5 @@
 import React from 'react';
 import Stories from './Stories';
-import Content from './Content';
 import Post from './Post';
 export default function Content() {
   return (
