@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 export default function Navbar() {
   return (
-    <div>
+    <div className="container">
       <nav className="navbar navbar-findcond navbar-fixed-top">
         <div className="container">
           <div className="navbar-header">
             <button
               type="button"
-              className="navbar-toggle collapsed"
+              className="navbar-toggle collapse"
               data-toggle="collapse"
               data-target="#navbar"
             >
@@ -21,7 +21,7 @@ export default function Navbar() {
               Instagram
             </a>
           </div>
-          <div className="collapse collapsed navbar-collapse" id="navbar">
+          <div className="collapsed navbar-collapse" id="navbar">
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
                 <a
@@ -31,7 +31,7 @@ export default function Navbar() {
                   role="button"
                   aria-expanded="false"
                 >
-                  <i className="fa fa-fw fa-bell-o"></i> Bildirimler{' '}
+                  <i className="fa fa-fw fa-bell-o"></i> Home
                   <span className="badge">0</span>
                 </a>
                 <ul className="dropdown-menu" role="menu">
@@ -68,7 +68,7 @@ export default function Navbar() {
               </li>
               <li className="active">
                 <a href="#">
-                  Ana Sayfa <span className="sr-only">(current)</span>
+                  Chat <span className="sr-only">(current)</span>
                 </a>
               </li>
               <li className="dropdown">
@@ -79,7 +79,7 @@ export default function Navbar() {
                   role="button"
                   aria-expanded="false"
                 >
-                  Admin <span className="caret"></span>
+                  Notification <span className="caret"></span>
                 </a>
                 <ul className="dropdown-menu" role="menu">
                   <li>
@@ -94,6 +94,11 @@ export default function Navbar() {
                   </li>
                   <li>
                     <a href="#exit">Çıkış yap</a>
+                  </li>
+                  <li className="active">
+                    <a href="#">
+                      Profile <span className="sr-only">(current)</span>
+                    </a>
                   </li>
                 </ul>
               </li>
