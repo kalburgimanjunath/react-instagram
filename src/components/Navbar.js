@@ -17,15 +17,15 @@ export default function Navbar() {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">
+            <Link className="navbar-brand" to="/">
               Instagram
-            </a>
+            </Link>
           </div>
           <div className="collapsed navbar-collapse" id="navbar">
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
-                <a
-                  href="#"
+                <Link
+                  to="/home"
                   className="dropdown-toggle"
                   data-toggle="dropdown"
                   role="button"
@@ -33,7 +33,7 @@ export default function Navbar() {
                 >
                   <i className="fa fa-fw fa-bell-o"></i> Home
                   <span className="badge">0</span>
-                </a>
+                </Link>
                 <ul className="dropdown-menu" role="menu">
                   <li>
                     <a href="#">
@@ -67,20 +67,25 @@ export default function Navbar() {
                 </ul>
               </li>
               <li className="active">
-                <a href="#">
+                <Link to="./explore">
+                  Explore <span className="sr-only">(current)</span>
+                </Link>
+              </li>
+              <li className="active">
+                <Link to="./chat">
                   Chat <span className="sr-only">(current)</span>
-                </a>
+                </Link>
               </li>
               <li className="dropdown">
-                <a
-                  href="#"
+                <Link
+                  to="./notification"
                   className="dropdown-toggle"
                   data-toggle="dropdown"
                   role="button"
                   aria-expanded="false"
                 >
                   Notification <span className="caret"></span>
-                </a>
+                </Link>
                 <ul className="dropdown-menu" role="menu">
                   <li>
                     <a href="#">Geri bildirim</a>
@@ -95,12 +100,13 @@ export default function Navbar() {
                   <li>
                     <a href="#exit">Çıkış yap</a>
                   </li>
-                  <li className="active">
-                    <a href="#">
-                      Profile <span className="sr-only">(current)</span>
-                    </a>
-                  </li>
                 </ul>
+              </li>
+
+              <li className="active">
+                <Link to="profile">
+                  Profile <span className="sr-only">(current)</span>
+                </Link>
               </li>
             </ul>
             <form

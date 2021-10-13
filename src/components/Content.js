@@ -3,7 +3,7 @@ import Stories from './Stories';
 import Post from './Post';
 export default function Content() {
   return (
-    <div>
+    <div className="container">
       Content
       <Stories />
       <Post />
