@@ -29,6 +29,27 @@ export default class Post extends React.Component {
       ],
     };
   }
+  componentDidMount() {
+    fetch('https://api.example.com/items')
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result.items,
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error,
+          });
+        }
+      );
+  }
   userdata = [
     {
       firstname: 'manjunath',
@@ -50,14 +71,30 @@ export default class Post extends React.Component {
     },
   ];
   render() {
-    return (
-      <div>
-        Post
-        <Avatar user={this.userdata} />
-        <div>Full Name</div>
-        <div>Address,Location,City,Country</div>
-        <PostItem user={this.userdata} />
-      </div>
-    );
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        <ul>
+          {items.map((item) => (
+            <li key={item.id}>
+              {item.name} {item.price}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    // return (
+    //   <div>
+    //     Post
+    //     <Avatar user={this.userdata} />
+    //     <div>Full Name</div>
+    //     <div>Address,Location,City,Country</div>
+    //     <PostItem user={this.userdata} />
+    //   </div>
+    // );
   }
 }
