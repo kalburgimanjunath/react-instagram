@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Avatar from './Avatar';
 import PostItem from './PostItem';
 export default class Post extends React.Component {
@@ -30,7 +30,7 @@ export default class Post extends React.Component {
     };
   }
   componentDidMount() {
-    fetch('https://api.example.com/items')
+    fetch('https://jsonplaceholder.typicode.com/posts')
       .then((res) => res.json())
       .then(
         (result) => {
@@ -70,6 +70,7 @@ export default class Post extends React.Component {
       post_video_url: '',
     },
   ];
+
   render() {
     const { error, isLoaded, items } = this.state;
     if (error) {
@@ -80,9 +81,7 @@ export default class Post extends React.Component {
       return (
         <ul>
           {items.map((item) => (
-            <li key={item.id}>
-              {item.name} {item.price}
-            </li>
+            <li key={item.id}>{item.title}</li>
           ))}
         </ul>
       );
